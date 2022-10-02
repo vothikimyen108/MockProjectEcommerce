@@ -10,6 +10,7 @@ import { ProductlistComponent } from './productlist/productlist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductCateComponent } from './product-cate/product-cate.component';
 import { RouterModule } from '@angular/router';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     MainContentComponent,
     ProductComponent,
     ProductlistComponent,
-    ProductCateComponent
+    ProductCateComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +29,10 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       { path: 'welcome', component: ProductlistComponent },
       { path: 'product/categorie/:name', component: ProductCateComponent },
-    // //   {
-    // //     path: 'product/:id', // khai báo router này để lấy id từ trên router
-    // //     component: ProductDetailsComponent
-    // // },
+      {
+        path: 'product/:id', // khai báo router này để lấy id từ trên router
+        component: ProductDetailComponent
+    },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),

@@ -38,6 +38,16 @@ export class ProductlistService {
       );
   }
 
+    //get categories
+  getProductById(id : number):Observable<Product> {
+      return this.http.get<Product>(`${url}/${id}`)
+        .pipe(
+          tap(data => data),
+          catchError(this.handleError)
+        );
+    }
+  
+
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {

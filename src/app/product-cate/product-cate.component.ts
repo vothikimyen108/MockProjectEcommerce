@@ -23,11 +23,10 @@ export class ProductCateComponent implements OnInit {
     }
   }
 
-
   onBack(): void {
     this.router.navigate(['/welcome']);
   }
   ngOnDestroy() {
     this.router.routeReuseStrategy.shouldReuseRoute = () => true;
-}
+  }
 }

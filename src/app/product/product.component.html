@@ -1,6 +1,6 @@
 <div class="product-item-info">
   <div class="product-photo-wrapper">
-    <a href="" title="">
+    <a [routerLink]="['/product/', product.id]">
       <picture>
         <source />
         <img class="image" [src]="product.image" [alt]="product.title" />

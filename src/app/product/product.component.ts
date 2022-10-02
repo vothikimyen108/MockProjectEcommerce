@@ -9,9 +9,7 @@ import { Product } from '../common/product';
 export class ProductComponent implements OnInit {
   @Input() product: Product = {} as Product
   constructor() { }
-
   ngOnInit(): void {
-
   }
 
 }
