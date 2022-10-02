@@ -7,15 +7,28 @@ import { Observable, catchError, tap, throwError, map } from "rxjs";
   providedIn: 'root',
 })
 export class ProductlistService {
-
+  url: string = 'https://fakestoreapi.com/products/'
   constructor(private http: HttpClient) {}
+
+  //get All porduct
   getProductAll():Observable<Product[]> {
-    return this.http.get<Product[]>('https://fakestoreapi.com/products')
+    return this.http.get<Product[]>(`${this.url}`)
       .pipe(
         tap(data => data),
         catchError(this.handleError)
       );
   }
+
+  //get by categories
+  getProducByCategories(name: string):Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.url}category/${name}`)
+      .pipe(
+        tap(data => data),
+        catchError(this.handleError)
+      );
+  }
+
+
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
