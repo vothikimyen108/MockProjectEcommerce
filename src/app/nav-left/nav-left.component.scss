@@ -1,0 +1,18 @@
+
+@import "../../assets/css/variables";
+@import "../../assets/css/mixins";
+@import "../../assets/css/functions";
+@import "../../assets/css/icon";
+
+.nav-left {
+    width: 20%;
+    min-width: 355px;
+    max-width: 20%;
+  
+    @import 'departments';
+
+    @import 'categories';
+
+    @import 'filters';
+
+}

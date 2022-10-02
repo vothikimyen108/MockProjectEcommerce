@@ -1,0 +1,26 @@
+@import 'icon';
+
+// variables color
+$color-primary:#2264D1;
+$color-primary-light:#76a9ff;
+$color-black-light:#787885;
+$bg-primary-light:#EBF2FE;
+$color-transparent:rgba(255, 255, 255, 0);
+$bg-color-nav-pages:#EBF2FE;
+$bg-color-activate: #2979FF;
+// variales font
+$txt-font-default: Arial, Helvetica, sans-serif;
+$txt-size-default: 1rem;
+
+//variable transform
+$rotate-0:0deg;
+$rotate-45:45deg;
+$rotate-90:90deg;
+$rotate-180:180deg;
+$rotate-360:360deg;
+
+$icon-view-list: url("../images/icons/view-list.svg");
+$icon-view-grid: url("../images/icons/view-grid.svg");
+$icon-arrow: url("../images/icons/arrow.svg");
+$icon-filter-variant: url("../images/icons/filter-variant.svg");
+
