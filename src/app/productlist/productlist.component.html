@@ -1,5 +1,7 @@
 <main class="main-section">
   <ul class="products" id="products">
-    <app-product></app-product>
+    <li *ngFor="let product of products" class="product-item">
+        <app-product [product]="product"></app-product>
+    </li>
   </ul>
 </main>

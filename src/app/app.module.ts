@@ -7,6 +7,7 @@ import { NavLeftComponent } from './nav-left/nav-left.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { ProductComponent } from './product/product.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductlistComponent } from './productlist/productlist.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
