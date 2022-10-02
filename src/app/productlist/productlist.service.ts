@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { Product } from '../type/product';
+import { Product } from '../common/product';
 import { Observable, catchError, tap, throwError, map } from "rxjs";
+import { url } from '../common/constant';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductlistService {
-  url: string = 'https://fakestoreapi.com/products/'
+
   constructor(private http: HttpClient) {}
 
   //get All porduct
   getProductAll():Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.url}`)
+    return this.http.get<Product[]>(`${url}`)
       .pipe(
         tap(data => data),
         catchError(this.handleError)
@@ -21,13 +22,21 @@ export class ProductlistService {
 
   //get by categories
   getProducByCategories(name: string):Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.url}category/${name}`)
+    return this.http.get<Product[]>(`${url}category/${name}`)
       .pipe(
         tap(data => data),
         catchError(this.handleError)
       );
   }
 
+  //get categories
+  getCategories():Observable<string[]> {
+    return this.http.get<string[]>(`${url}/categories`)
+      .pipe(
+        tap(data => data),
+        catchError(this.handleError)
+      );
+  }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';

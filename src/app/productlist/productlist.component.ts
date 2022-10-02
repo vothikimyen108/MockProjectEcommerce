@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../type/product';
+import { Product } from '../common/product';
 import { ProductlistService } from './productlist.service';
 import { Subscription } from 'rxjs';
 

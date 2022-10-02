@@ -52,12 +52,10 @@
   <div class="related">
     <ul class="labels list">
       <li class="item">Related</li>
-      <li class="item">worldwide shipping</li>
-      <li class="item">under $50</li>
-      <li class="item">kitten</li>
-      <li class="item">plastic plugs</li>
-      <li class="item">pucker shoes</li>
-      <li class="item">vintage typewriter</li>
+      <li *ngFor="let item of categories" class="item">
+        <a [routerLink]="['/product/categorie/', item]">
+        {{ item }}</a>
+      </li>
     </ul>
   </div>
 </header>
